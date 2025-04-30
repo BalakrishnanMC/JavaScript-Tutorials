@@ -4,6 +4,11 @@
     <title>Subscribe Button & Shipping Calculator</title>
     
     <style>
+
+      body{
+        font-family: Arial;
+      }
+
       .subscribe-button{
         border:none;
         background-color: black;
@@ -23,6 +28,20 @@
         color: rgb(0, 0, 0);
       }
 
+      .input-box{
+        padding: 10px;
+        font-size: 15px;
+      }
+
+      .calculate-button{
+        font-size: 15px;
+        padding: 12px 15px;
+        background-color: green;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
     </style>
   </head>
 
@@ -34,18 +53,12 @@
     <p>
       Amazon Shipping Calculator
     </p>
-    <p>
-      Order Under $40 = +$10 Shipping Cost
-    </p>
-    <p>
-      Order Above $40 FREE Shipping Cost
-    </p>
-    <input placeholder="Cost of order" class="js-input-box" onkeydown="
+    <input placeholder="Cost of order" class="js-input-box input-box" onkeydown="
       calculateEnter(event);
     ">
     <button onclick="
       calculate();
-    ">Calculate</button>
+    " class="calculate-button">Calculate</button>
     <p class="js-display"></p>
 
 
