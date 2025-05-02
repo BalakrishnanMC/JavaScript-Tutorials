@@ -37,7 +37,7 @@ body{
 .score-card{
   font-size: 25px;
 }
-.reset-button{
+.reset-button , .auto-play-button{
   border: none;
   padding: 10px 15px;
   font-size: 25px;

@@ -26,6 +26,22 @@ function pickComputerMove(){
     return `scissor`;
   }
 }
+let isAutoplay = false;
+let intervalId;
+function autoPlay(){
+  if(!isAutoplay){
+    isAutoplay = true;
+    intervalId = setInterval(function() {
+      const x = pickComputerMove();
+      const y = pickComputerMove();
+      playGame(x,y);
+    },1000);
+  }
+  else{
+    clearInterval(intervalId);
+    isAutoplay = false;
+  }
+}
 
 function playGame(playerMove,computerMove){
   let result = ``;
