@@ -1,15 +1,18 @@
 const arr = [];
 
-const todolistHTML = ``;
-for(let i=0;i<arr.length;i++){
-  todolistHTML+= `<p>${arr[i]}</p>`;
+function displayTodo(){
+  let todolistHTML = ``;
+  for(let i=0;i<arr.length;i++){
+    todolistHTML+= `<p>${arr[i]}</p>`;
+  }
+  document.querySelector('.js-display-todo').innerHTML = todolistHTML;
 }
-console.log(todolistHTML);
+
 function addTodo(){
   const inputElement = document.querySelector('.js-input');
   arr.push(inputElement.value);
-  console.log(arr);
   inputElement.value = ``;
+  displayTodo();
 }
 
 function checkEnter(event){
