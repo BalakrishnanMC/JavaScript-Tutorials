@@ -3,9 +3,10 @@ const arr = [];
 function displayTodo(){
   let todolistHTML = ``;
   for(let i=0;i<arr.length;i++){
-    todolistHTML+= `<p>${arr[i].name} ${arr[i].date} <button 
-      onclick="arr.splice(${i},1); displayTodo()"
-    >delete</button></p>`;
+    todolistHTML+= `
+      <div>${arr[i].name}</div>
+      <div>${arr[i].date}</div> 
+      <button onclick="arr.splice(${i},1); displayTodo()" class="delete-button">Delete</button>`;
   }
   document.querySelector('.js-display-todo').innerHTML = todolistHTML;
 }
