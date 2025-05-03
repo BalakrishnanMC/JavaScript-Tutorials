@@ -8,7 +8,7 @@ function displayTodo(){
   //     <div>${arr[i].date}</div> 
   //     <button onclick="arr.splice(${i},1); displayTodo()" class="delete-button">Delete</button>`;
   // }
-  arr.forEach(function(value,index){
+  arr.forEach((value,index) => {
     todolistHTML+= `
       <div>${value.name}</div>
       <div>${value.date}</div> 
@@ -30,3 +30,7 @@ function checkEnter(event){
     addTodo();
   }
 }
+
+document.querySelector('.js-add-button').addEventListener('click',() =>{
+  addTodo();
+});

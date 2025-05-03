@@ -14,6 +14,7 @@ const scoreCard = document.querySelector('.js-score-card');
 const movesCard = document.querySelector('.js-move-card');
 
 scoreCard.innerHTML = `Wins: ${score.wins} Lose: ${score.losses} Tie: ${score.tie}`;
+
 function pickComputerMove(){
   let num = Math.random();
   if(num <= 1/3){
@@ -31,7 +32,7 @@ let intervalId;
 function autoPlay(){
   if(!isAutoplay){
     isAutoplay = true;
-    intervalId = setInterval(function() {
+    intervalId = setInterval(() => {
       const x = pickComputerMove();
       const y = pickComputerMove();
       playGame(x,y);
@@ -60,9 +61,9 @@ function playGame(playerMove,computerMove){
   localStorage.setItem('score',JSON.stringify(score));
   updateScoreCard();
   movesElement.innerHTML = `You
-<img src="images/${playerMove}.png" class="move-icon">
-<img src="images/${computerMove}.png" class="move-icon">
-Computer`;
+    <img src="images/${playerMove}.png" class="move-icon">
+    <img src="images/${computerMove}.png" class="move-icon">
+    Computer`;
   movesCard.innerHTML = `${result}`;
 }
 
@@ -81,3 +82,23 @@ function clearScore(){
 function updateScoreCard(){
   scoreCard.innerHTML = `Wins: ${score.wins} Lose: ${score.losses} Tie: ${score.tie}`;
 }
+
+document.querySelector('.js-rock-button').addEventListener('click',() =>{
+  playGame(`rock`,pickComputerMove());
+});
+
+document.querySelector('.js-paper-button').addEventListener('click',() =>{
+  playGame(`paper`,pickComputerMove());
+});
+
+document.querySelector('.js-scissor-button').addEventListener('click',() =>{
+  playGame(`scissor`,pickComputerMove());
+});
+
+document.querySelector('.js-reset-button').addEventListener('click',() =>{
+  clearScore();
+});
+
+document.querySelector('.js-auto-play-button').addEventListener('click',() =>{
+  autoPlay();
+});
