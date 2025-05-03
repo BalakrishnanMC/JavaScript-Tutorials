@@ -2,12 +2,18 @@ const arr = [];
 
 function displayTodo(){
   let todolistHTML = ``;
-  for(let i=0;i<arr.length;i++){
+  // for(let i=0;i<arr.length;i++){
+  //   todolistHTML+= `
+  //     <div>${arr[i].name}</div>
+  //     <div>${arr[i].date}</div> 
+  //     <button onclick="arr.splice(${i},1); displayTodo()" class="delete-button">Delete</button>`;
+  // }
+  arr.forEach(function(value,index){
     todolistHTML+= `
-      <div>${arr[i].name}</div>
-      <div>${arr[i].date}</div> 
-      <button onclick="arr.splice(${i},1); displayTodo()" class="delete-button">Delete</button>`;
-  }
+      <div>${value.name}</div>
+      <div>${value.date}</div> 
+      <button onclick="arr.splice(${index},1); displayTodo()" class="delete-button">Delete</button>`;
+  });
   document.querySelector('.js-display-todo').innerHTML = todolistHTML;
 }
 
