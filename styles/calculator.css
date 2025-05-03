@@ -1,0 +1,26 @@
+body{
+  font-family: Arial;
+  background-color: black;
+  color: white;
+  align-items: center;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns: 50px 50px 50px 50px;
+}
+
+button{
+  border-radius: 25px;
+  padding: 15px;
+  border:none;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  background-color: rgb(73, 73, 73);
+  color:white;
+}
+
+.special-button{
+  background-color: rgb(216, 133, 32);
+}
+
